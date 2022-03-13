@@ -26,6 +26,12 @@ function Header(props) {
         <Link to="/post">
             <div>POSTS</div>
         </Link>
+        <Link to="/login">
+            <div>LOGIN</div>
+        </Link>
+        <Link to="/register">
+            <div>REGISTER</div>
+        </Link>
         </nav>
     </header>
     );
