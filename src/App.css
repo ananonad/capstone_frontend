@@ -41,12 +41,24 @@
 h1 {
   color: black;
 }
-img .NYC {
+
+h2 {
+  text-align: justify;
+  color: black;
+}
+
+.NYC {
     width: 30%;
     height: 30%;
     float: left;
 }
-h2 {
-  text-align: justify;
-  color: black;
+.SF {
+    width: 30%;
+    height: 30%;
+    float: center;
+}
+.AMS {
+  width: 30%;
+    height: 30%;
+    float: right;
 }

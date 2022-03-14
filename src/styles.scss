@@ -17,6 +17,10 @@ nav {
     display: flex;
     justify-content: flex-start;
     
+    a:link{
+        text-decoration: none;
+    }
+    
     a {
         @include white-text-black-bg;
         div {
@@ -24,4 +28,5 @@ nav {
             font-size: large;
         }
     }
+    
 }

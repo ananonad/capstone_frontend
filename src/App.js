@@ -9,7 +9,7 @@ import Register from './pages/Register/Register'
 import Login from './pages/Login/Login'
 
 function App() {
-  const URL = "https://capstone-project22.herokuapp.com/";
+  const URL = "https://capstone-project22.herokuapp.com";
 
   return (
     <div className="App">
