@@ -1,4 +1,4 @@
-import { Link, useParams, useNavigate} from "react-router-dom"
+import {  useParams, useNavigate} from "react-router-dom"
 import { useState, useEffect } from "react"
 
 function Editpost(props) {
@@ -51,9 +51,11 @@ function Editpost(props) {
           navigate('/post')
     };
     
-    const removePost = () => {
-    post.deletePost(post._id)
-    post.history.push('/')
+    const  deletePost = async post  => {
+      await fetch(`${props.URL}/post/${id}`, {
+        method: "delete",
+    })
+    navigate('/')
   }
 
     const loaded = () => {
@@ -63,7 +65,7 @@ function Editpost(props) {
               <h2>{post.location}</h2>
               <h3>{post.description}</h3>
               <img src={post.image} alt={post.name} />
-              <button id="delete" onClick={removePost}>DELETE</button>
+              <button id="delete" onClick={deletePost}>DELETE</button>
               
     <form onSubmit={handleSubmit}>
         <input
@@ -94,7 +96,7 @@ function Editpost(props) {
             placeholder="Description"
             onChange={handleChange}
         />
-        <Link to='/post'> <input type="submit" value="Edit Post" /> </Link>
+          <input type="submit" value="Edit Post" />
     </form>
             </div>
         );

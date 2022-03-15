@@ -13,7 +13,7 @@
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: black;
   min-height: 100vh;
   display: flex;
@@ -22,7 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: red;
-}
+} */
 
 .App-link {
   color: red;
@@ -41,4 +41,19 @@ h1{
   color: #2F4F4F;
   font-family:'Syne Mono', monospace;
   text-size-adjust: 18px;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  grid-template-columns: repeat(3,1fr);
+  font-weight: bolder;
+}
+
+.container img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 2);
+  margin-bottom: 7px;
 }
