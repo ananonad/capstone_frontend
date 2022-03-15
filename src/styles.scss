@@ -1,5 +1,5 @@
-$maincolor: black;
-$contrastcolor: white;
+$maincolor: #2F4F4F;
+$contrastcolor: #D3D3D3;
 
 @mixin white-text-black-bg {
     color: $contrastcolor;
@@ -25,8 +25,12 @@ nav {
         @include white-text-black-bg;
         div {
             margin: 10px;
-            font-size: large;
+            font-size: medium;
+            font-family:'Syne Mono', monospace;
+            font-weight: 100;
         }
     }
     
 }
+
+

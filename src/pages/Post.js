@@ -24,20 +24,17 @@ function Post(props) {
         setPosts(data)
     }
 
-    const createPosts = async person => {
-        // make post request to create people
+    const createPosts = async post=> {
         await fetch(URL, {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(person),
+            body: JSON.stringify(post),
         })
-        // update list of people
         getPosts()
     }
     useEffect(() => getPosts(), [])
-    // handle submit function for form
     const handleSubmit = (event) => {
         event.preventDefault();
         createPosts(newForm);
@@ -49,11 +46,10 @@ function Post(props) {
         });
     };
 
-    // loaded function
     const loaded = () => {
         return posts.map((posts) => (
             <div key={posts._id} className="posts">
-                <Link to={`/posts/${posts._id}`}><h1>{posts.name}</h1></Link>
+                <Link to={`/post/${posts._id}`}><h1>{posts.name}</h1></Link>
                 <img src={posts.image} alt={posts.name} />
                 <h3>{posts.location}</h3>
             </div>
@@ -84,14 +80,14 @@ function Post(props) {
                     type="text"
                     value={newForm.location}
                     name="location"
-                    placeholder="A cool title"
+                    placeholder="Location"
                     onChange={handleChange}
                 />
                 <input
                     type="text"
                     value={newForm.description}
                     name="description"
-                    placeholder="A cool title"
+                    placeholder="Description"
                     onChange={handleChange}
                 />
                 <input type="submit" value="Create Posts" />

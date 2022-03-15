@@ -37,28 +37,8 @@
   }
 }
 
-
-h1 {
-  color: black;
-}
-
-h2 {
-  text-align: justify;
-  color: black;
-}
-
-.NYC {
-    width: 30%;
-    height: 30%;
-    float: left;
-}
-.SF {
-    width: 30%;
-    height: 30%;
-    float: center;
-}
-.AMS {
-  width: 30%;
-    height: 30%;
-    float: right;
+h1{
+  color: #2F4F4F;
+  font-family:'Syne Mono', monospace;
+  text-size-adjust: 18px;
 }

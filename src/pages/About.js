@@ -1,5 +1,8 @@
 function About(props) {
-    return <h1>About</h1>;
-}
+    return (
+        <div className="About">
+    <h1>Welcome To Voyager About Page</h1>
+    </div>
+    )}
 
 export default About;
