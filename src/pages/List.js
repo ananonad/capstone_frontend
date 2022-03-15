@@ -24,7 +24,7 @@ function List(props) {
     };
 
     const createLists = async list => {
-        await fetch(URL, {
+        await fetch(props.URL + '/list', {
             method: "post",
             headers: {
                 "Content-Type": "application/json",

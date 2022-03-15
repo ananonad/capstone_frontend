@@ -17,9 +17,7 @@ const getPosts = async () => {
     console.log(data)
     setPost(data)
 }
-useEffect(() => {
-    getPosts() 
-}, [])
+useEffect(() => {getPosts() }, [])
 
 const loading = () => {
     return <h1>Loading...</h1>;
@@ -30,7 +28,7 @@ const loaded = () => {
 return (
 
     <div>
-        <h1>{post.name}</h1>
+        <Link to={`/post/${id}/edit`}><h1>{post.name}</h1></Link>
         <img src={post.image} alt={post.name}/>
         <h2>{post.location}</h2>
         <h3>{post.description}</h3>

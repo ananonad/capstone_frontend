@@ -25,7 +25,7 @@ function Post(props) {
     }
 
     const createPosts = async post=> {
-        await fetch(URL, {
+        await fetch(props.URL + '/post', {
             method: "post",
             headers: {
                 "Content-Type": "application/json",
