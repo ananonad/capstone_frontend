@@ -2,9 +2,10 @@ import React, { useState } from 'react';
 import helpers from './helpers'
 import './Login.scss';
 
-const Login = () => {
+const Login = ({ setIsUserLoggedIn }) => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
+    const [error, setError] = useState()
 
     const { loginUser } = helpers
 
@@ -20,18 +21,21 @@ const Login = () => {
                 password
             };
 
-        loginUser(userData)
+        loginUser(userData, setError, setIsUserLoggedIn)
     };
 
+    const mainClass = 'login-page'
+
     return (
-        <div id="login-page-container">
-            <div id="login-page-inputs">
-                <label for="email">Email</label><br /><input type="text" id="email" onChange={(e) => changeHandler(e, setEmail)} /><br /><br />
-                <label for="password">Password</label><br /><input type="password" id="password" onChange={(e) => changeHandler(e, setPassword)} />
+        <div id={`${mainClass}-container`}>
+            <div id={`${mainClass}-inputs`}>
+                <label for="email">Email</label><br /><input type="text" id={`${mainClass}-email`} onChange={(e) => changeHandler(e, setEmail)} /><br /><br />
+                <label for="password">Password</label><br /><input type="password" d={`${mainClass}-password`} onChange={(e) => changeHandler(e, setPassword)} />
             </div>
       
+            {error && <span id={`${mainClass}-errorText`}>{error?.message}</span>}
 
-            <button id="login-page-submit" onClick={onSubmit} >Login</button>
+            <button id={`${mainClass}-submit`} onClick={onSubmit} >Login</button>
         </div>
     )
 }

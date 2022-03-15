@@ -11,7 +11,7 @@ const setAuthToken = token => {
     }
 };
 
-const loginUser = userData => {
+const loginUser = (userData, errorSetter, setIsUserLoggedIn) => {
     axios
     .post("/user/login", userData)
     .then(res => {
@@ -28,13 +28,27 @@ const loginUser = userData => {
 
         // Set current user
         localStorage.setItem("currentUserInfo", decoded);
+
+        errorSetter(false)
+        setIsUserLoggedIn(true)
       })
-    .catch(err => {
-        localStorage.setItem("currentUserInfo", {error: true});
+    .catch(error => {
+        errorSetter(error.response.data)
     })
 }
 
+export const logoutUser = setIsUserLoggedIn => {
+    // Remove token from local storage
+    localStorage.removeItem("jwtToken");
+    localStorage.removeItem('currentUserInfo');
+    // Remove auth header for future requests
+    setAuthToken(false);
 
-const helpersObj = { loginUser }
+    if (typeof setIsUserLoggedIn === 'function') 
+        setIsUserLoggedIn(false)
+}; 
+
+
+const helpersObj = { loginUser, logoutUser }
 
 export default helpersObj
