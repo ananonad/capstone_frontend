@@ -11,9 +11,9 @@ const setAuthToken = token => {
     }
 };
 
-const loginUser = (userData, errorSetter, setIsUserLoggedIn) => {
+const loginUser = (userData, errorSetter, setIsUserLoggedIn, URL) => {
     axios
-    .post("/user/login", userData)
+    .post(`${URL}/user/login`, userData)
     .then(res => {
         // Save to localStorage
         // Set token to localStorage

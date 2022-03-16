@@ -18,12 +18,16 @@ function Header({ isUserLoggedIn, setIsUserLoggedIn, logoutUser }) {
                 <Link to="/about">
                     <div>ABOUT</div>
                 </Link>
-                <Link to="/list">
-                    <div>LISTINGS</div>
-                </Link>
-                <Link to="/post">
-                    <div>POSTS</div>
-                </Link>
+                {isUserLoggedIn && (
+                    <Link to="/list">
+                        <div>LISTINGS</div>
+                    </Link>
+                )}
+                {isUserLoggedIn && (
+                    <Link to="/post">
+                        <div>POSTS</div>
+                    </Link>
+                )}
                 {!isUserLoggedIn && (
                     <Link to="/register">
                         <div>REGISTER</div>

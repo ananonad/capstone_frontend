@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import helpers from './helpers'
 import './Login.scss';
 
-const Login = ({ setIsUserLoggedIn }) => {
+const Login = ({ setIsUserLoggedIn, URL }) => {
     const [email, setEmail] = useState()
     const [password, setPassword] = useState()
     const [error, setError] = useState()
@@ -21,7 +21,7 @@ const Login = ({ setIsUserLoggedIn }) => {
                 password
             };
 
-        loginUser(userData, setError, setIsUserLoggedIn)
+        loginUser(userData, setError, setIsUserLoggedIn, URL)
     };
 
     const mainClass = 'login-page'

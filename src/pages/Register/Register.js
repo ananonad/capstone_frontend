@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import helpers from './helpers'
 import './Register.scss';
 
-const Register = () => {
+const Register = ({ URL }) => {
     const [username, setUsername] = useState()
     const [location, setLocation] = useState()
     const [email, setEmail] = useState()
@@ -26,7 +26,7 @@ const Register = () => {
               email,
               password
             };
-        registerUser(newUser, setError, navigate)
+        registerUser(newUser, setError, navigate, URL)
     }
 
     const mainClass = 'register-page'

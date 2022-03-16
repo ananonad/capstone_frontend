@@ -20,7 +20,6 @@ function Post(props) {
     const getPosts = async () => {
         const response = await fetch(props.URL + '/post')
         const data = await response.json()
-        console.log(data)
         setPosts(data)
     }
 

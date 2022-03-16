@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const registerUser = (userData, errorSetter, navigate) => {
+const registerUser = (userData, errorSetter, navigate, URL) => {
     axios
-    .post("/user/register", userData)
+    .post(`${URL}/user/register`, userData)
     .then(res => {
         errorSetter(false)
         navigate("/login");

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import jwt_decode from 'jwt-decode'
 import Header from "./components/Header";
 import { Route, Routes } from "react-router-dom";
+import PrivateRoute from './components/PrivateRoute.js'
 import Home from "./pages/Home";
 import About from "./pages/About";
 import List from "./pages/List";
@@ -52,13 +53,14 @@ function App() {
       <Routes>
       <Route exact path="/" element={<Home />} />
         <Route path="/about" element={<About URL={URL} />} />
-        <Route path="/list" element={<List URL={URL} />} />
-        <Route path="/list/:id" element={<Showlist URL={URL} />} />
-        <Route path="/post" element={<Post URL={URL} />} />
-        <Route path="/post/:id" element={<Showpost URL={URL}/>} />
-        <Route path="/post/:id/edit" element={<Editpost URL={URL}/>} />
-        <Route path="/login" element={<Login URL={URL} setIsUserLoggedIn={setIsUserLoggedIn} />} />
-        <Route path="/register" element={<Register URL={URL} />} />
+        <Route path="/list" element={<PrivateRoute component={List} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/list/:id" element={<PrivateRoute component={Showlist} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/post" element={<PrivateRoute component={Post} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/post/:id" element={<PrivateRoute component={Showpost} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/post/:id/edit" element={<PrivateRoute component={Editpost} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/login" element={<PrivateRoute component={Login} URL={URL} isUserLoggedIn={isUserLoggedIn}
+           setIsUserLoggedIn={setIsUserLoggedIn} reversed />} />
+        <Route path="/register" element={<PrivateRoute component={Register} URL={URL} isUserLoggedIn={isUserLoggedIn} reversed />} />
       </Routes>
     </div>
   );
