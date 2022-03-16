@@ -27,7 +27,7 @@ const loading = () => {
 const loaded = () => {
 return (
 
-    <div>
+    <div className="showpost">
         <Link to={`/post/${id}/edit`}><h1>{post.name}</h1></Link>
         <img src={post.image} alt={post.name}/>
         <h2>{post.location}</h2>

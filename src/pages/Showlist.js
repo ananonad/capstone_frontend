@@ -1,4 +1,4 @@
-import {Link, useParams} from "react-router-dom"
+import { Link, useParams} from "react-router-dom"
 import { useState, useEffect } from "react"
 
 
@@ -29,8 +29,8 @@ const loading = () => {
 const loaded = () => {
 return (
 
-    <div>
-        <h1>{list.name}</h1>
+    <div className="showlist">
+        <Link to={`/list/${id}/edit`}><h1>{list.name}</h1></Link>
         <img src={list.image} alt={list.name}/>
         <h2>{list.location}</h2>
         <h3>{list.description}</h3>

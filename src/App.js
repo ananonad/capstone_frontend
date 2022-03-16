@@ -13,6 +13,7 @@ import Showpost from './pages/Showpost';
 import helpers from './pages/Login/helpers'
 import Editpost from './pages/Editpost';
 import Showlist from './pages/Showlist';
+import Editlist from './pages/Editlist';
 import "./App.css";
 
 const { logoutUser } = helpers
@@ -55,6 +56,7 @@ function App() {
         <Route path="/about" element={<About URL={URL} />} />
         <Route path="/list" element={<PrivateRoute component={List} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
         <Route path="/list/:id" element={<PrivateRoute component={Showlist} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
+        <Route path="/list/:id/edit" element={<PrivateRoute component={Editlist} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
         <Route path="/post" element={<PrivateRoute component={Post} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
         <Route path="/post/:id" element={<PrivateRoute component={Showpost} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />
         <Route path="/post/:id/edit" element={<PrivateRoute component={Editpost} URL={URL} isUserLoggedIn={isUserLoggedIn} />} />

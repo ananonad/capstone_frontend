@@ -1,2 +1,15 @@
-Description
+LINK
+
+
+
+DESCRIPTION
+This website is for people who loves traveling around. Users will be able to check listings and available aparatments in different cities around the world. Also, they can check things to do posts for specific cities while they are traveling
+User won't be able to see listings and posts webistes unless they register. 
+
+TECHNOLOGIES USED
+MERN stack - MongoDB, Express, React, Node.
+JSON Web Tokens, SaSS.
+
+INSTALLATION 
+Using install dependencies with yarn or npm.
 
