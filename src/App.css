@@ -44,16 +44,47 @@ h1{
 }
 
 .container {
-  display: grid;
-  grid-template-rows: repeat(3,1fr);
-  grid-template-columns: repeat(3,1fr);
-  font-weight: bolder;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
 }
 
+
 .container img {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   object-fit: cover;
   box-shadow: 0 3px 10px rgb(0 0 0 / 2);
-  margin-bottom: 7px;
+  margin: 9px;
+}
+
+.container figcaption{
+  color: black;
+  font-weight:  300px;
+}
+
+.about {
+  display: flex;
+  color: #2F4F4F;
+  font-family:'Syne Mono', monospace;
+}
+
+
+.about figcaption {
+  color: #2F4F4F;
+  font-family:'Syne Mono', monospace;
+}
+
+/* .lists {
+  display: grid;
+} */
+.lists img {
+  width: 650px;
+  height: 650px;
+}
+
+.posts img {
+  width: 650px;
+  height: 650px;
 }

@@ -49,8 +49,8 @@ function Post(props) {
         return posts.map((posts) => (
             <div key={posts._id} className="posts">
                 <Link to={`/post/${posts._id}`}><h1>{posts.name}</h1></Link>
-                <img src={posts.image} alt={posts.name} />
                 <h3>{posts.location}</h3>
+                <img src={posts.image} alt={posts.name} />
             </div>
         ));
     };

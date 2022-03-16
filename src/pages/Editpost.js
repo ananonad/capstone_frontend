@@ -55,7 +55,7 @@ function Editpost(props) {
       await fetch(`${props.URL}/post/${id}`, {
         method: "delete",
     })
-    navigate('/')
+    navigate('/post')
   }
 
     const loaded = () => {
